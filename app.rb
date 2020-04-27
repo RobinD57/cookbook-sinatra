@@ -38,3 +38,10 @@ get '/destroy/:id' do
   cookbook.remove_recipe(params[:id].to_i)
   redirect '/'
 end
+
+get '/done/:id' do
+  cookbook = Cookbook.new(File.join(__dir__, 'recipes.csv'))
+  puts params
+  cookbook.mark_done(params[:id].to_i)
+  redirect '/'
+end

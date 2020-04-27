@@ -8,4 +8,8 @@ class Recipe
     @prep_time = options[:prep_time]
     @done = false
   end
+
+  def done
+    @done = true
+  end
 end

@@ -27,7 +27,7 @@ class Cookbook
 
   def mark_done(idx)
     recipe = @recipes[idx]
-    recipe.done = true
+    recipe.done
     save_csv
   end
 
