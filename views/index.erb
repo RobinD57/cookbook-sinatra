@@ -1,11 +1,8 @@
-<p>
-  I'm in a <em>view</em>!
-</p>
-
-<%= Time.now %>
-
-<% @usernames.each do |username| %>
+<% @recipes.each_with_index do |recipe, index| %>
   <li>
-    <%= username %>
+    <%= recipe.name %> <a href="/destroy/<%=index %>">Destroy</a>
+    <a href="/done/<%= recipe.done %>">Mark as done</a>
   </li>
 <% end %>
+
+<a href="/new">Add new recipe!</a>
